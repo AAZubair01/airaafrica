@@ -767,28 +767,120 @@ p:last-child { margin-bottom: 0; }
 .site-header:not(.scrolled) .main-nav a.active { color: var(--gold); border-color: var(--gold); }
 .site-header:not(.scrolled) .nav-toggle span { background: var(--cream); }
 
-/* ---------- Partners strip ---------- */
-.partners-strip {
+/* ---------- Founding partners invite (honest empty state) ---------- */
+.partners-invite {
   background: var(--white);
   border-top: 1px solid rgba(14, 43, 70, 0.08);
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
 }
-.partner-row {
+.partners-invite-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.partners-invite-inner .mini-title { justify-content: center; }
+.partners-invite-inner h2 { margin-bottom: 1rem; }
+.partners-invite-inner .lede { margin-bottom: 1.8rem; }
+.partners-invite-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- Phase / honesty banners ---------- */
+.phase-band {
+  background: var(--marine);
+  padding: clamp(2.8rem, 5vw, 4.2rem) 0;
+}
+.phase-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.6rem, 3vw, 2.8rem);
 }
-.partner-row img {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.phase-item .phase-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.7rem;
 }
-.partner-row img:hover { opacity: 1; transform: translateY(-3px); }
-@media (max-width: 620px) {
-  .partner-row { grid-template-columns: 1fr 1fr; }
+.phase-item h3 {
+  color: var(--cream);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  margin-bottom: 0.55rem;
+}
+.phase-item p {
+  color: var(--text-light);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--marine);
+  border: 1px dashed var(--gold-deep);
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.launch-note {
+  border-left: 3px solid var(--gold);
+  background: rgba(206, 168, 78, 0.1);
+  padding: 1.1rem 1.3rem;
+  margin: 1.6rem 0 0;
+  font-size: 1rem;
+}
+
+/* ---------- Volunteer role list ---------- */
+.role-list { border-top: 1px solid rgba(14, 43, 70, 0.18); }
+.role-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.8rem 0.2rem;
+  border-bottom: 1px solid rgba(14, 43, 70, 0.18);
+}
+.role-row h3 { font-size: 1.35rem; margin-bottom: 0.35rem; }
+.role-row .role-meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+.role-row p { font-size: 1rem; max-width: 640px; margin: 0; }
+.role-row .btn { white-space: nowrap; }
+
+.empty-state {
+  max-width: 640px;
+  padding: 2rem 0 0.5rem;
+}
+.empty-state h3 { margin-bottom: 0.8rem; }
+
+/* ---------- Hero brand wordmark emphasis ---------- */
+.hero-island .brand-hero {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--marine);
+  margin-bottom: 0.35rem;
+}
+.hero-island .brand-hero span { color: var(--gold-deep); }
+
+@media (max-width: 860px) {
+  .phase-grid { grid-template-columns: 1fr; }
+  .role-row { grid-template-columns: 1fr; }
 }
 
 /* ---------- Logo/contain images inside split media ---------- */
